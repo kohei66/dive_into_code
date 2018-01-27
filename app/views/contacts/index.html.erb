@@ -1,0 +1,18 @@
+<h1>ブログ一覧</h1>
+
+<table>
+    <tr>
+        <th>名前</th>
+        <th>Email</th>
+        <th>内容</th>
+    </tr>
+<% @contacts.each do |contact| %>
+  <tr>
+      <td><%= contact.name %></td>
+      <td><%= contact.email %></td>
+      <td><%= contact.content %></td>
+      <td><%= link_to '詳細を確認する', contact_path(contact.id) %></td>
+  </tr>
+<% end %>
+</table>
+<%= link_to '新しくcontentsを投稿する', new_contact_path %>
