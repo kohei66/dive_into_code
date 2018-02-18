@@ -1,3 +1,15 @@
-// Place all the styles related to the blogs controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.main-header {
+  padding-bottom: 30%;
+  width: 100%;
+  background-image: url("FB_IMG_1500171029787.jpg");
+  background-attachment: fixed;
+}
+
+.footer {
+  width: 100%;
+  text-align: center;
+}
+
+body{
+  background-color: rgba(54, 86, 224, 0.1);
+}

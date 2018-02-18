@@ -4,11 +4,55 @@
     <title>Sample</title>
     <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
-    <%= yield %>
-  </body>
+<body>
+  <div class="container">
+
+    <header>
+      <nav class="navbar navbar-default">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#gnavi">
+              <span class="sr-only">Bootstrap</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">bootstrap blog</a>
+          </div>
+          <div id="gnavi" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+              <li><%= link_to blogs_path do %>
+                <p>一覧</p>
+                <%= mi.view_module %>
+              <% end %>
+            </li>
+            <li><%= link_to new_blog_path do %>
+              <p>新規投稿</p>
+              <%= mi.comment %>
+            <% end %>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+</header>
+<section class="main-header"></section>
+<section class="about">
+  <h1>About bootstrap blogs</h1>
+  <p>
+    rails+bootstrapでブログアプリを作成いたしました。 ブログを投稿、編集、削除が可能です。
+  </p>
+</section>
+<%= yield %>
+<footer class="footer">
+  <div class="container">
+    <p class="text-muted">bootstrap 2018koheikobayashi</p>
+  </div>
+</footer>
+</div>
+</body>
 </html>
