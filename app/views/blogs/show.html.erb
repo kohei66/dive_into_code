@@ -1,16 +1,11 @@
-<!--<h1>ブログ詳細画面</h1>-->
-
-<!--<table>-->
-<!--  <tr>-->
-<!--      <td>タイトル</td>-->
-<!--      <td><%= @blog.title %></td>-->
-<!--  </tr>-->
-<!--  <tr>-->
-<!--      <td>内容</td>-->
-<!--      <td><%= @blog.content %></td>-->
-<!--  </tr>-->
-<!--</table>-->
-
 <h1>ブログ詳細画面</h1>
-<p>タイトル: <%= @blog.title %></p>
-<p>内容: <%= @blog.content %></p>
+<ul class="list-group">
+  <li class="col-md-6 col-xs-12 list-group-item">
+    <p>タイトル:
+      <%= @blog.title %></p>
+  </li>
+  <li class="col-md-6 col-xs-12 list-group-item">
+    <p>内容:
+      <%= @blog.content %></p>
+  <li>
+</ul>
