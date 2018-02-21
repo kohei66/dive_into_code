@@ -13,3 +13,8 @@
 body{
   background-color: rgba(54, 86, 224, 0.1);
 }
+table {
+    width: 100%;
+    overflow-y: hidden;
+    overflow-x: auto;
+  }
