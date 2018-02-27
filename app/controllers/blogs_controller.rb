@@ -1,5 +1,6 @@
 class BlogsController < ApplicationController
-  before_action :set_blog, only: [:show, :edit, :update, :destroy,]
+  before_action :set_blog, only: %i[show edit update destroy]
+  before_action :must_logged_in, only: %i[new edit show]
 
   def index
     @blogs = Blog.all
@@ -26,14 +27,13 @@ class BlogsController < ApplicationController
 
   def edit; end
 
-def update
-  if @blog.update(blog_params)
-    redirect_to blogs_path, notice: 'Clone was successfully created.'
-  else
-    render 'edit'
+  def update
+    if @blog.update(blog_params)
+      redirect_to blogs_path, notice: 'Clone was successfully created.'
+    else
+      render 'edit'
+    end
   end
-end
-
 
   def destroy
     @blog.destroy
@@ -54,5 +54,9 @@ end
   # idをキーとして値を取得するメソッド
   def set_blog
     @blog = Blog.find(params[:id])
+  end
+
+  def must_logged_in
+    redirect_to new_session_path unless logged_in?
   end
 end
