@@ -17,4 +17,9 @@ class SessionsController < ApplicationController
     flash[:notice]="ログアウトしました"
     redirect_to new_session_path
   end
+
+# private
+#   def set_user_params
+#     params.require(:session).permit(:email, :password)
+#   end
 end
