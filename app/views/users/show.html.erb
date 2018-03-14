@@ -6,12 +6,12 @@
 
 <h1>このユーザーのお気に入りブログ一覧は下記の通り</h1>
 <% no = 1 %>
-  <% @favorite_blogs.each do |favorite| %>
+  <!-- <%# @favorite_blogs.each do |favorite| %>
     <div>
-      <p class="btn btn-primary">No.<%= no %></p>
+      <p class="btn btn-primary">No.<%#= no %></p>
       <% no += 1 %>
-        <p class="btn btn-primary">タイトル：<%= favorite.blog.title %></p>
-        <p class="btn btn-primary">内容：<%= favorite.blog.content %></p>
+        <p class="btn btn-primary">タイトル：<%#= favorite.blog.title %></p>
+        <p class="btn btn-primary">内容：<%#= favorite.blog.content %></p>
       </div>
 
-    <% end %>
+    <%# end %> -->
