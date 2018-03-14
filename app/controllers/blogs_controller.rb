@@ -17,6 +17,7 @@ class BlogsController < ApplicationController
   def create
     @blog = current_user.blogs.new(blog_params)
     if @blog.save
+      NotificationMailer.notification_mail(@blog).deliver
       redirect_to blogs_path, notice: 'Clone was successfully created.'
     else
       render 'new'
