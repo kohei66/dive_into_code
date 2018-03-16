@@ -13,17 +13,31 @@
   </div>
 <% end %>
 
+<div class="user_name">
 <%= f.label :name %>
 <%= f.text_field :name %>
+</div>
 
+<div class="user_email">
 <%= f.label :email %>
 <%= f.email_field :email %>
+</div>
 
+<div class="user_password">
 <%= f.label :password %>
 <%= f.password_field :password %>
+</div>
 
+<div class="user_password_confirmation">
 <%= f.label :password_confirmation %>
 <%= f.password_field :password_confirmation %>
+</div>
+
+<div class="user_image">
+  <%= f.label :image %>
+  <%= f.file_field :image %>
+  <%= f.hidden_field :image_cache %>
+</div>
 
 <%= f.submit "Create my account" %>
 <% end %>

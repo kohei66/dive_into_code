@@ -16,7 +16,8 @@ class BlogsController < ApplicationController
 
   def create
     @blog = current_user.blogs.new(blog_params)
-    if @blog.save
+    @blog.image.retrieve_from_cache! params[:cache][:image]
+    if @blog.save!
       NotificationMailer.notification_mail(@blog).deliver
       redirect_to blogs_path, notice: 'Clone was successfully created.'
     else
@@ -51,7 +52,7 @@ class BlogsController < ApplicationController
   private
 
   def blog_params
-    params.require(:blog).permit(:title, :content)
+    params.require(:blog).permit(:title, :content, :image)
   end
 
   # idをキーとして値を取得するメソッド

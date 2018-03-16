@@ -1,17 +1,20 @@
 <h1>show page</h1>
 
+<strong>写真:</strong>
+<%= image_tag @user.image.thumb %>
+</p>
 <p>名前：<%= @user.name %></p>
 
 <p>email:<%= @user.email %></p>
 
 <h1>このユーザーのお気に入りブログ一覧は下記の通り</h1>
 <% no = 1 %>
-  <% @favorite_blogs.each do |favorite| %>
-    <div>
-      <p class="btn btn-primary">No.<%= no %></p>
-      <% no += 1 %>
-        <p class="btn btn-primary">タイトル：<%= favorite.blog.title %></p>
-        <p class="btn btn-primary">内容：<%= favorite.blog.content %></p>
-      </div>
+<% @favorite_blogs.each do |favorite| %>
+  <div>
+    <p class="btn btn-primary">No.<%= no %></p>
+    <% no += 1 %>
+      <p class="btn btn-primary">タイトル：<%= favorite.blog.title %></p>
+      <p class="btn btn-primary">内容：<%= favorite.blog.content %></p>
+    </div>
 
-    <% end %>
+  <% end %>

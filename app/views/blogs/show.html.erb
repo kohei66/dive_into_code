@@ -7,7 +7,15 @@
   <li class="col-md-6 col-xs-12 list-group-item">
     <p>内容:
       <%= @blog.content %></p>
+  </li>
   <li>
+    <p>
+    <strong>Image:</strong>
+    <div>
+    <%= image_tag @blog.image %>
+  </div>
+  </p>
+  </li>
 </ul>
 
 <% unless @blog.user == current_user %>
